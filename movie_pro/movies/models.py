@@ -31,7 +31,7 @@ class TbComment(models.Model):
 class TbLoginIp(models.Model):
     id_ip = models.AutoField(primary_key=True)
     ip_addr = models.CharField(max_length=128, blank=True, null=True)
-    login_date = models.DateField(blank=True, null=True)
+    login_date = models.DateTimeField(blank=True, null=True)
     u = models.ForeignKey('TbUser', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
@@ -45,8 +45,8 @@ class TbMovie(models.Model):
     actor = models.CharField(max_length=1024, blank=True, null=True)
     language = models.CharField(max_length=128, blank=True, null=True)
     director = models.CharField(max_length=256, blank=True, null=True)
-    release_date = models.DateField(blank=True, null=True)
-    update_date = models.DateField(blank=True, null=True)
+    release_date = models.DateTimeField(blank=True, null=True)
+    update_date = models.DateTimeField(blank=True, null=True)
     score = models.CharField(max_length=128, blank=True, null=True)
     synopsis = models.TextField(blank=True, null=True)
     main_pic = models.CharField(max_length=256, blank=True, null=True)
@@ -86,6 +86,8 @@ class TbUser(models.Model):
     password = models.CharField(max_length=128, blank=True, null=True)
     email = models.CharField(max_length=128, blank=True, null=True)
     phone = models.CharField(max_length=128, blank=True, null=True)
+    register_date = models.DateTimeField(blank=True, null=True)
+    register_ip = models.CharField(max_length=64, blank=True, null=True)
     u_status = models.IntegerField(blank=True, null=True)
 
     class Meta:

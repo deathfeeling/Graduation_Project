@@ -182,7 +182,7 @@ LOGGING = {
         'django': {
             'handlers': ['console', 'file1', 'file2'],
             'propagate': True,
-            'level': 'DEBUG',
+            'level': 'WARNING',
         },
     }
 }
@@ -261,13 +261,13 @@ SESSION_CACHE_ALIAS = 'session'
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Asia/Chongqing'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -277,3 +277,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 密码正则匹配，密码长度6-12位，必须包含字母和数字，不能有其他字符
+RE_USER_PASSWORD = r'^(?=.*[A-Za-z])(?=.*[0-9])\w{6,12}$'
+
+# 用户名正则匹配，长度4-12位，只能是字母数字下划线
+RE_USERNAME = r'^\w{4,12}$'
+
+# 邮箱正则匹配
+RE_EMAIL = r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$'
+
+# 手机号码正则匹配
+RE_PHONE = r'^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|147)\d{8}$'

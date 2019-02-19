@@ -41,7 +41,7 @@ create table tb_login_ip
 (
    id_ip                int not null auto_increment,
    ip_addr              varchar(128),
-   login_date           date,
+   login_date           datetime,
    u_id                 integer,
    primary key (id_ip)
 );
@@ -56,8 +56,8 @@ create table tb_movie
    actor                varchar(1024),
    language             varchar(128),
    director             varchar(256),
-   release_date         date,
-   update_date          date,
+   release_date         datetime,
+   update_date          datetime,
    score                varchar(128),
    synopsis             long varchar,
    main_pic             varchar(256),
@@ -100,6 +100,8 @@ create table tb_user
    password             varchar(128),
    email                varchar(128),
    phone                varchar(128),
+   register_date        datetime,
+   register_ip          varchar(64),
    u_status             tinyint,
    primary key (u_id)
 );

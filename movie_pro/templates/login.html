@@ -36,6 +36,7 @@
 						<input type="submit" name="" value="登录" class="input_submit">
 					</form>
 
+
 				</div>
 			</div>
 		</div>
@@ -54,6 +55,7 @@
 		<p>CopyRight © 2019 西华师范大学自主研发 All Rights Reserved</p>
 		<p>电话：180****4810   &nbsp; &nbsp; 京ICP备*******8号</p>
 	</div>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".input_submit").on('click', function(e){
@@ -62,12 +64,24 @@
                 var password = $('.pass_input').val();
 				$.post('/user/login/', {'user':user, 'password':password}, function(data){
 				    if (data['code']==1000){
-				        alert(data['msg']);
+				        hidden();
+				        $('.pwd_error').text(data['msg']).show();
 				    }else if (data['code']==1001){
+				        hidden();
+				        $('.user_error').text(data['msg']).show();
+				    }else if (data['code']==1002){
+				        hidden();
+				        $('.pwd_error').text(data['msg']).show();
+				    }else if (data['code']==200){
+				        hidden();
+                        location.href='/user/index';
 				    }
-
 				});
 			})
+			function hidden(){
+                $('.user_error').hide();
+                $('.pwd_error').hide();
+			}
 		})
 	</script>
 </body>
