@@ -3,6 +3,7 @@ django-debug-toolbar==1.11
 django-redis==4.10.0
 djangorestframework==3.9.1
 requests
+Pillow
 PyMySQL==0.9.3
 redis==3.1.0
 sqlparse==0.2.4

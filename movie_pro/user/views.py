@@ -1,8 +1,9 @@
 import time
+import base64
 from hashlib import md5
 from re import fullmatch
 
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 from rest_framework.decorators import api_view
@@ -13,12 +14,15 @@ from django.http import JsonResponse
 from movies.models import TbUser
 from movie_pro.settings import RE_USER_PASSWORD, RE_USERNAME, RE_PHONE, RE_EMAIL
 from user.tools import gen_mobile_code, send_mobile_code, get_ip_address
+from user.tools import gen_captcha_text
+from user.captcha import Captcha
+
 
 
 @api_view(['GET', 'POST'])
 def login(request):
     """登录"""
-    # todo:1、记录登录ip信息； 2、记录登录会话 ；3、调出登录验证码
+    # todo:1、记录登录ip信息； 2、记录登录会话 ；
     if request.method == 'GET':
         return render(request, 'login.html')
     if request.method == 'POST':
@@ -33,6 +37,18 @@ def login(request):
             return JsonResponse({'code':200, 'msg':'ok'})
         else:
             return JsonResponse({'code':1000, 'msg':'用户名或密码不能为空'})
+
+
+def captcha(request):
+    """生成图片验证码"""
+    # 随机验证码内容, 可以指定长度
+    code_text = gen_captcha_text()
+    # 将验证码放入session缓存中
+    request.session['code_text'] = code_text
+    # instance()指定验证码宽高； generate(code_text)生成验证码,返回图片二进制数据
+    code_bytes = Captcha.instance().generate(code_text)
+    code_base64_str = base64.b64encode(code_bytes).decode('utf-8')
+    return JsonResponse({'code':200, 'pic':code_base64_str})
 
 
 @api_view(['GET', 'POST'])

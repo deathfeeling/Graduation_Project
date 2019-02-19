@@ -1,8 +1,9 @@
 import json
-from io import StringIO
-from random import randint
+import random
+from io import StringIO, BytesIO
 
 import requests
+
 
 
 def get_ip_address(request):
@@ -25,5 +26,18 @@ def gen_mobile_code(length=6):
     """生成指定长度的手机验证码"""
     code = StringIO()
     for _ in range(length):
-        code.write(str(randint(0, 9)))
+        code.write(str(random.randint(0, 9)))
+    return code.getvalue()
+
+
+
+ALL_CHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+def gen_captcha_text(length=4):
+    """生成指定长度的图片验证码文字"""
+    code = StringIO()
+    chars_len = len(ALL_CHARS)
+    for _ in range(length):
+        index = random.randrange(chars_len)
+        code.write(ALL_CHARS[index])
     return code.getvalue()

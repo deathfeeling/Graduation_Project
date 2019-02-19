@@ -27,6 +27,11 @@
 						<div class="user_error">输入错误</div>
 						<input type="password" name="password" class="pass_input" placeholder="请输入密码">
 						<div class="pwd_error">输入错误</div>
+
+                        <input type="text" name="captcha" class="captcha" placeholder="请输入验证码">
+                        <p class="change_captcha"><img id="captcha_pic" src="" width="100px" height="38px"/></p>
+						<div class="captcha_error">输入错误</div>
+
 						<div class="more_input clearfix">
 							<input type="checkbox" name="">
 							<label>记住用户名</label>
@@ -58,6 +63,23 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+            $.get('/user/captcha/', function(data){
+                if (data['code']==200){
+                    var pic = "data:image/gif;base64,"+data['pic'];
+                    $('#captcha_pic').attr('src', pic);
+                }
+            })
+
+		    $('.change_captcha').on('click', function(e){
+		        e.preventDefault();
+		        $.get('/user/captcha/', function(data){
+		            if (data['code']==200){
+		                var pic = "data:image/gif;base64,"+data['pic'];
+		                $('#captcha_pic').attr('src', pic);
+		            }
+		        })
+		    })
+
 			$(".input_submit").on('click', function(e){
 				e.preventDefault();
                 var user = $('.name_input').val();
