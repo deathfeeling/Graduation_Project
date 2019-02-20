@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from movies.models import *
+from movies.models import TbMovie
 
 
 def create_moviedata_to_mysql(request):

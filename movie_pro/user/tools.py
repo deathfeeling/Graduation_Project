@@ -1,6 +1,6 @@
 import json
 import random
-from io import StringIO, BytesIO
+from io import StringIO
 
 import requests
 

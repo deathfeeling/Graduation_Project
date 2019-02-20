@@ -1,22 +1,18 @@
 import time
 import base64
-from hashlib import md5
 from re import fullmatch
 
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
-from django.urls import reverse
 from rest_framework.decorators import api_view
 from django.contrib.auth.hashers import check_password, make_password
-from django_redis import  get_redis_connection
-from django.http import JsonResponse
+from django_redis import get_redis_connection
 
 from movies.models import TbUser, TbLoginIp
 from movie_pro.settings import RE_USER_PASSWORD, RE_USERNAME, RE_PHONE, RE_EMAIL
 from user.tools import gen_mobile_code, send_mobile_code, get_ip_address
 from user.tools import gen_captcha_text
 from user.captcha import Captcha
-
 
 
 @api_view(['GET', 'POST'])
