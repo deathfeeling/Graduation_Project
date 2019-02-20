@@ -11,7 +11,7 @@ from django.contrib.auth.hashers import check_password, make_password
 from django_redis import  get_redis_connection
 from django.http import JsonResponse
 
-from movies.models import TbUser
+from movies.models import TbUser, TbLoginIp
 from movie_pro.settings import RE_USER_PASSWORD, RE_USERNAME, RE_PHONE, RE_EMAIL
 from user.tools import gen_mobile_code, send_mobile_code, get_ip_address
 from user.tools import gen_captcha_text
@@ -22,21 +22,30 @@ from user.captcha import Captcha
 @api_view(['GET', 'POST'])
 def login(request):
     """登录"""
-    # todo:1、记录登录ip信息； 2、记录登录会话 ；
     if request.method == 'GET':
         return render(request, 'login.html')
     if request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
-        if all([user, password]):
+        captcha = request.POST.get('captcha').lower()
+        # 验证字段完整性
+        if all([user, password, captcha]):
             user = TbUser.objects.filter(username=user).first()
             if not user:
-                return JsonResponse({'code': 1001, 'msg': '该用户不存在'})
+                return JsonResponse({'code': 1001, 'msg': '该用户不存在,请先注册'})
             if not check_password(password, user.password):
                 return JsonResponse({'code': 1002, 'msg':'密码输入错误'})
+            captcha_truely = request.session.get('code_text').lower()
+            if captcha != captcha_truely:
+                return JsonResponse({'code': 1003, 'msg':'验证码错误'})
+            # 记录登录信息
+            ip = get_ip_address(request)   # 拿到用户登录ip
+            TbLoginIp.objects.create(ip_addr=ip, login_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), u=user)
+            # 保持登录会话
+            request.session['token'] = user.u_id
             return JsonResponse({'code':200, 'msg':'ok'})
         else:
-            return JsonResponse({'code':1000, 'msg':'用户名或密码不能为空'})
+            return JsonResponse({'code':1000, 'msg':'请填写所有的字段'})
 
 
 def captcha(request):
@@ -88,7 +97,10 @@ def register(request):
         # 创建用户信息
         ip_addr = get_ip_address(request)
         password = make_password(password)
+        # 注册用户状态默认为1(可用)
         TbUser.objects.create(username=username, password=password, email=email, phone=phone, register_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), register_ip=ip_addr, u_status=1)
+        # 注册成功删除缓存验证码信息
+        cli.delete(f'mobile_code:{phone}')
         return JsonResponse({'code':200, 'msg':'ok'})
 
 

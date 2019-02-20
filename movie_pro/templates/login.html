@@ -84,16 +84,28 @@
 				e.preventDefault();
                 var user = $('.name_input').val();
                 var password = $('.pass_input').val();
-				$.post('/user/login/', {'user':user, 'password':password}, function(data){
+                var captcha = $('.captcha').val();
+                hidden();
+				$.post('/user/login/', {'user':user, 'password':password, 'captcha':captcha}, function(data){
 				    if (data['code']==1000){
 				        hidden();
-				        $('.pwd_error').text(data['msg']).show();
+				        $('.captcha_error').text(data['msg']).show();
 				    }else if (data['code']==1001){
 				        hidden();
 				        $('.user_error').text(data['msg']).show();
 				    }else if (data['code']==1002){
 				        hidden();
 				        $('.pwd_error').text(data['msg']).show();
+				    }else if (data['code']==1003){
+				        hidden();
+				        $('.captcha_error').text(data['msg']).show();
+				        <!--验证码错误后刷新验证码-->
+                        $.get('/user/captcha/', function(data){
+                            if (data['code']==200){
+                                var pic = "data:image/gif;base64,"+data['pic'];
+                                $('#captcha_pic').attr('src', pic);
+                            }
+                        })
 				    }else if (data['code']==200){
 				        hidden();
                         location.href='/user/index';
@@ -103,6 +115,7 @@
 			function hidden(){
                 $('.user_error').hide();
                 $('.pwd_error').hide();
+                $('.captcha_error').hide();
 			}
 		})
 	</script>
