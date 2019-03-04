@@ -112,5 +112,6 @@ def click_send_button(request, mobile):
     return JsonResponse(result)
 
 
+
 def index(request):
     return render(request, 'index.html')
