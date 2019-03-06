@@ -2,7 +2,7 @@ import time
 import base64
 from re import fullmatch
 
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from django.contrib.auth.hashers import check_password, make_password
@@ -44,6 +44,7 @@ def login(request):
             return JsonResponse({'code':1000, 'msg':'请填写所有的字段'})
 
 
+@api_view(['POST'])
 def captcha(request):
     """生成图片验证码"""
     # 随机验证码内容, 可以指定长度
@@ -111,6 +112,11 @@ def click_send_button(request, mobile):
     # {'return_code': '00000', 'order_id': 'MB1550561278181631021'}
     return JsonResponse(result)
 
+
+def logout(request):
+    """注销"""
+    del request.session['token']
+    return HttpResponse('logout ok')
 
 
 def index(request):

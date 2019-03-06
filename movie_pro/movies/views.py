@@ -7,6 +7,7 @@ from movies.models import TbMovie
 
 
 def create_moviedata_to_mysql(request):
+    """创建数据到mysql"""
     with open('result.json', 'r', encoding='utf-8') as f:
         results = f.read()
     results = json.loads(results)
@@ -29,3 +30,26 @@ def create_moviedata_to_mysql(request):
     return HttpResponse('Create successful!')
 
 
+def classification(request):
+    """电影分类"""
+    return render(request, 'classification.html')
+
+
+def series(request):
+    """电视剧"""
+    return render(request, 'series.html')
+
+
+def news(request):
+    """资讯"""
+    return render(request, 'news.html')
+
+
+def list(request):
+    """a-z字母表"""
+    return render(request, 'list.html')
+
+
+def contact(request):
+    """联系我"""
+    return render(request, 'contact.html')

@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'user.middleware.block_sms_middleware',    # 中间件-登录状态判断
 ]
 
 DEBUG_TOOLBAR_PANELS = (

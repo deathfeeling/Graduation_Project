@@ -40,8 +40,6 @@
 						</div>
 						<input type="submit" name="" value="登录" class="input_submit">
 					</form>
-
-
 				</div>
 			</div>
 		</div>
@@ -63,7 +61,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-            $.get('/user/captcha/', function(data){
+            $.post('/user/captcha/', function(data){
                 if (data['code']==200){
                     var pic = "data:image/gif;base64,"+data['pic'];
                     $('#captcha_pic').attr('src', pic);
@@ -72,7 +70,7 @@
 
 		    $('.change_captcha').on('click', function(e){
 		        e.preventDefault();
-		        $.get('/user/captcha/', function(data){
+		        $.post('/user/captcha/', function(data){
 		            if (data['code']==200){
 		                var pic = "data:image/gif;base64,"+data['pic'];
 		                $('#captcha_pic').attr('src', pic);
@@ -100,7 +98,7 @@
 				        hidden();
 				        $('.captcha_error').text(data['msg']).show();
 				        <!--验证码错误后刷新验证码-->
-                        $.get('/user/captcha/', function(data){
+                        $.post('/user/captcha/', function(data){
                             if (data['code']==200){
                                 var pic = "data:image/gif;base64,"+data['pic'];
                                 $('#captcha_pic').attr('src', pic);
