@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Movies Pro an Entertainment Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Movies Pro an Entertainment Category Flat Bootstrap Responsive Website Template | Home</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,8 +37,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a  href="index.html"><span>M</span>ovies <span>P</span>ro</a></h1>
+						<h1><a  href="{% url 'user:index' %}"><span>M</span>ovies <span>P</span>ro</a></h1>
 					</div>
+
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
@@ -72,11 +73,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 								</ul>
 							</li>
-							<li><a href="{% url 'movies:series' %}">电视剧</a></li>
 							<li><a href="{% url 'movies:news' %}">资讯</a></li>
 							<li><a href="{% url 'movies:list' %}">A-Z表</a></li>
 							<li><a href="{% url 'movies:contact' %}">联系</a></li>
+                            <!--登录信息-->
+                            <span class="user-id" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;">未登录,请先去<a href="{% url 'user:login' %}">登录</a></span>
+                            <span class="logout" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;"></span>
+
 						</ul>
+
 
 					</div>
 					<div class="clearfix"> </div>	
@@ -102,9 +107,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <div class="baner-info">
 			      <h3>Latest <span>On</span>Line <span>Mo</span>vies</h3>
 				  <h4>In space no one can hear you scream.</h4>
-				  <a class="w3_play_icon1" href="#small-dialog1">
-											Watch Trailer
-										</a>
 			   </div>
 			<!--/banner-ingo-->		
 		</div>
@@ -116,11 +118,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			     <div class="w3_agilits_inner_bottom">
 			            <div class="col-md-6 wthree_agile_login">
 						     <ul>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 009 455 4088</li>
-									<li><a href="#" class="login"  data-toggle="modal" data-target="#myModal4">Login</a></li>
-									<li><a href="#" class="login reg"  data-toggle="modal" data-target="#myModal5">Register</a></li>
+								 <li>联系电话 180-8039-4810 </li>
+									<li><a href="{% url 'user:login' %}" class="login">Login</a></li>
+									<li><a href="{% url 'user:register' %}" class="login reg">Register</a></li>
 
-								</ul>
+                             </ul>
 						</div>
 						 <div class="col-md-6 wthree_share_agile">
 									
@@ -208,12 +210,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   <div class="agileinfo_tabs">
 						<!--/tab-section-->
 					    <div id="horizontalTab">
-								<ul class="resp-tabs-list">
-									<li>Recent</li>
-									<li>Popularity</li>
-									<li>Top Rating </li>
-									
-								</ul>
 						<div class="resp-tabs-container">
 							<div class="tab1">
 								<div class="tab_movies_agileinfo">
@@ -478,9 +474,9 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												<p class="fexi_header_para"><span>Release On<label>:</label></span>Feb 3, 2016 </p>
 												<p class="fexi_header_para">
 													<span>Genres<label>:</label> </span>
-													<a href="genre.html">Drama</a> | 
-													<a href="genre.html">Adventure</a> | 
-													<a href="genre.html">Family</a>								
+													<a href="genre.html">Drama</a> |
+													<a href="genre.html">Adventure</a> |
+													<a href="genre.html">Family</a>
 												</p>
 												<p class="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
 													<a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
@@ -499,7 +495,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 															</a>
 																<div class="mid-1 agileits_w3layouts_mid_1_home">
 																	<div class="w3l-movie-text">
-																		<h6><a href="single.html">Inferno</a></h6>							
+																		<h6><a href="single.html">Inferno</a></h6>
 																	</div>
 																	<div class="mid-2 agile_mid_2_home">
 																		<p>2016</p>
@@ -525,7 +521,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Now You See Me 2</a></h6>							
+														<h6><a href="single.html">Now You See Me 2</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -551,7 +547,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Warcraft</a></h6>							
+														<h6><a href="single.html">Warcraft</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -577,7 +573,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Money Monster</a></h6>							
+														<h6><a href="single.html">Money Monster</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -603,7 +599,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Ghostbuster</a></h6>							
+														<h6><a href="single.html">Ghostbuster</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -629,7 +625,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Rambo 4</a></h6>							
+														<h6><a href="single.html">Rambo 4</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -655,7 +651,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">RoboCop</a></h6>							
+														<h6><a href="single.html">RoboCop</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -681,7 +677,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">X-Men</a></h6>					
+														<h6><a href="single.html">X-Men</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -705,7 +701,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 											<div class="clearfix"> </div>
 										  </div>
 										  <div class="cleafix"></div>
-									</div>	
+									</div>
 							</div>
 						<div class="tab3">
 								<div class="tab_movies_agileinfo">
@@ -721,9 +717,9 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												<p class="fexi_header_para"><span>Release On<label>:</label></span>Aug 1, 2016 </p>
 												<p class="fexi_header_para">
 													<span>Genres<label>:</label> </span>
-													<a href="genre.html">Drama</a> | 
-													<a href="genre.html">Adventure</a> | 
-													<a href="genre.html">Family</a>								
+													<a href="genre.html">Drama</a> |
+													<a href="genre.html">Adventure</a> |
+													<a href="genre.html">Family</a>
 												</p>
 												<p class="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
 													<a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
@@ -742,7 +738,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 															</a>
 																<div class="mid-1 agileits_w3layouts_mid_1_home">
 																	<div class="w3l-movie-text">
-																		<h6><a href="single.html">Swiss Army Man	</a></h6>		
+																		<h6><a href="single.html">Swiss Army Man	</a></h6>
 																	</div>
 																	<div class="mid-2 agile_mid_2_home">
 																		<p>2016</p>
@@ -768,7 +764,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Me Before you</a></h6>							
+														<h6><a href="single.html">Me Before you</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -794,7 +790,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Deadpool</a></h6>					
+														<h6><a href="single.html">Deadpool</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -820,7 +816,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Rogue One </a></h6>							
+														<h6><a href="single.html">Rogue One </a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -846,7 +842,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Storks</a></h6>						
+														<h6><a href="single.html">Storks</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -872,7 +868,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Hopeless</a></h6>							
+														<h6><a href="single.html">Hopeless</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -898,7 +894,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Mechanic</a></h6>							
+														<h6><a href="single.html">Mechanic</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -924,7 +920,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Timeless</a></h6>							
+														<h6><a href="single.html">Timeless</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -948,11 +944,11 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 											<div class="clearfix"> </div>
 										  </div>
 										  <div class="cleafix"></div>
-									</div>	
+									</div>
 								</div>
 							</div>
 						</div>
-						
+
 					</div>
 				<!--//tab-section-->	
 				  <h3 class="agile_w3_title"> Latest <span>Movies</span></h3>
@@ -1215,285 +1211,21 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 					   </div>
 				    </div>
 				<!--//movies-->
-				 <h3 class="agile_w3_title">Requested <span>Movies</span> </h3>
-				<!--/requested-movies-->
-				     <div class="wthree_agile-requested-movies">
-										<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-															<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m1.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-																<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-															</a>
-																<div class="mid-1 agileits_w3layouts_mid_1_home">
-																	<div class="w3l-movie-text">
-																		<h6><a href="single.html">Swiss Army Man</a></h6>							
-																	</div>
-																	<div class="mid-2 agile_mid_2_home">
-																		<p>2016</p>
-																		<div class="block-stars">
-																			<ul class="w3l-ratings">
-																				<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																				<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																			</ul>
-																		</div>
-																		<div class="clearfix"></div>
-																	</div>
-																</div>
-															<div class="ribben one">
-																<p>NEW</p>
-															</div>
-													</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m2.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Me Before you</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-											<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m3.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Deadpool</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-												<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m4.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Rogue One </a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-											<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m5.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Storks	</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-												<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m6.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Hopeless</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-												<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m7.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Mechanic</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-											<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m8.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Timeless</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-											<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m9.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Inferno</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-												<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-											<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-												<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m11.jpg" title="Movies Pro" class="img-responsive" alt=" ">
-													<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-												</a>
-												<div class="mid-1 agileits_w3layouts_mid_1_home">
-													<div class="w3l-movie-text">
-														<h6><a href="single.html">Warcraft</a></h6>							
-													</div>
-													<div class="mid-2 agile_mid_2_home">
-														<p>2016</p>
-														<div class="block-stars">
-															<ul class="w3l-ratings">
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-																<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-															</ul>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												</div>
-												<div class="ribben one">
-													<p>NEW</p>
-												</div>
-											</div>
-												<div class="clearfix"></div>
-						</div>
-				<!--//requested-movies-->
+
+
 				<!--/top-movies-->
 					<h3 class="agile_w3_title">Top<span>Movies</span> </h3>
 							<div class="top_movies">
 								<div class="tab_movies_agileinfo">
 										<div class="w3_agile_featured_movies two">
-										
+
 										     <div class="col-md-7 wthree_agile-movies_list second-top">
 														<div class="w3l-movie-gride-agile">
 															<a href="single.html" class="hvr-sweep-to-bottom"><img src="/static/images/m1.jpg" title="Movies Pro" class="img-responsive" alt=" ">
 															</a>
 																<div class="mid-1 agileits_w3layouts_mid_1_home">
 																	<div class="w3l-movie-text">
-																		<h6><a href="single.html">Swiss Army Man</a></h6>							
+																		<h6><a href="single.html">Swiss Army Man</a></h6>
 																	</div>
 																	<div class="mid-2 agile_mid_2_home">
 																		<p>2016</p>
@@ -1519,7 +1251,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Me Before you</a></h6>							
+														<h6><a href="single.html">Me Before you</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1545,7 +1277,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Deadpool</a></h6>							
+														<h6><a href="single.html">Deadpool</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1571,7 +1303,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Rogue One </a></h6>							
+														<h6><a href="single.html">Rogue One </a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1597,7 +1329,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Storks	</a></h6>							
+														<h6><a href="single.html">Storks	</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1623,7 +1355,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Hopeless</a></h6>	 						
+														<h6><a href="single.html">Hopeless</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1649,7 +1381,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Mechanic</a></h6>							
+														<h6><a href="single.html">Mechanic</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1675,7 +1407,7 @@ A girl in a small town forms an unlikely bond with a recently-paralyzed man she'
 												</a>
 												<div class="mid-1 agileits_w3layouts_mid_1_home">
 													<div class="w3l-movie-text">
-														<h6><a href="single.html">Timeless</a></h6>							
+														<h6><a href="single.html">Timeless</a></h6>
 													</div>
 													<div class="mid-2 agile_mid_2_home">
 														<p>2016</p>
@@ -1768,6 +1500,24 @@ Storks Official Trailer 3 (2016) - Andy Samberg Movie  the company's top deliver
 			</script>
 		<!-- //Dropdown-Menu-JavaScript -->
 
+            <script>
+                <!--请求登录用户信息-->
+                $.get('/user/request_user_info/', function(data){
+                    if (data['code']==200){
+                        var name = data['user']['name'];
+                        var id = data['user']['id'];
+                        $('.user-id').text('用户:' + name + ' | ');
+                        $('.logout').text('注销').on('click', function(){
+                            location.href='/user/logout/';
+                        });
+                        $('.user-id').show();
+                        $('.logout').show();
+                    }else if (data['code']==1050){
+                        $('.user-id').show();
+                    }
+                });
+
+            </script>
 
 <script type="text/javascript" src="/static/js/jquery.zoomslider.min.js"></script>
 		<!-- search-jQuery -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Movies Pro an Entertainment Category Flat Bootstrap Responsive Website Template | List :: w3layouts</title>
+<title>Movies Pro an Entertainment Category Flat Bootstrap Responsive Website Template | News</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,11 +19,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 <link href="/static/css/font-awesome.css" rel="stylesheet"> 
 <script type="text/javascript" src="/static/js/modernizr-2.6.2.min.js"></script>
-<!--/web-fonts-->
-<!-- <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
-<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
-<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-<!--//web-fonts-->
 </head>
 <body>
 <!--/main-header-->
@@ -41,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a  href="index.html"><span>M</span>ovies <span>P</span>ro</a></h1>
+						<h1><a  href="{% url 'user:index' %}"><span>M</span>ovies <span>P</span>ro</a></h1>
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -76,10 +71,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 								</ul>
 							</li>
-							<li><a href="{% url 'movies:series' %}">电视剧</a></li>
 							<li><a href="{% url 'movies:news' %}">资讯</a></li>
 							<li><a href="{% url 'movies:list' %}">A-Z表</a></li>
 							<li><a href="{% url 'movies:contact' %}">联系</a></li>
+                            <!--登录信息-->
+                            <span class="user-id" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;">未登录,请先去<a href="{% url 'user:login' %}">登录</a></span>
+                            <span class="logout" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;"></span>
+
 						</ul>
 
 					</div>
@@ -111,47 +109,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			     <div class="w3_agilits_inner_bottom">
 			            <div class="col-md-6 wthree_agile_login">
 						     <ul>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 009 455 4088</li>
-									<li><a href="#" class="login"  data-toggle="modal" data-target="#myModal4">Login</a></li>
-									<li><a href="#" class="login reg"  data-toggle="modal" data-target="#myModal5">Register</a></li>
+								 <li>联系电话 180-8039-4810 </li>
+									<li><a href="{% url 'user:login' %}" class="login">Login</a></li>
+									<li><a href="{% url 'user:register' %}" class="login reg">Register</a></li>
 
-								</ul>
+                             </ul>
 						</div>
 						 <div class="col-md-6 wthree_share_agile">
-									
+
 									<div class="single-agile-shar-buttons">
 									<ul>
-								<li>
-									<div class="fb-like" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-									<script>(function(d, s, id) {
-									  var js, fjs = d.getElementsByTagName(s)[0];
-									  if (d.getElementById(id)) return;
-									  js = d.createElement(s); js.id = id;
-									  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
-									  fjs.parentNode.insertBefore(js, fjs);
-									}(document, 'script', 'facebook-jssdk'));</script>
-								</li>
-								<li>
-									<div class="fb-share-button" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fw3layouts&amp;src=sdkpreparse">Share</a></div>
-								</li>
-								<li class="news-twitter">
-									<a href="https://twitter.com/w3layouts" class="twitter-follow-button" data-show-count="false">Follow @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-								</li>
-								<li>
-									<a href="https://twitter.com/intent/tweet?screen_name=w3layouts" class="twitter-mention-button" data-show-count="false">Tweet to @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-								</li>
 								<li>
 									<!-- Place this tag where you want the +1 button to render. -->
 									<div class="g-plusone" data-size="medium"></div>
 
 									<!-- Place this tag after the last +1 button tag. -->
-									<script type="text/javascript">
-									  (function() {
-										var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-										po.src = 'https://apis.google.com//static/js/platform.js';
-										var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-									  })();
-									</script>
 								</li>
 							</ul>
 								</div>
@@ -226,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="w3_breadcrumb">
 	<div class="breadcrumb-inner">	
 			<ul>
-				<li><a href="index.html">Home</a><i>//</i></li>
+				<li><a href="{% url 'user:index' %}">Home</a><i>//</i></li>
 				<li>News</li>
 			</ul>
 		</div>
@@ -473,6 +445,27 @@ A girl in a small town forms an unlikely....</p>
 					);
 				});
 			</script>
+
+            <script>
+                <!--请求登录用户信息-->
+                $.get('/user/request_user_info/', function(data){
+                    if (data['code']==200){
+                        var name = data['user']['name'];
+                        var id = data['user']['id'];
+                        $('.user-id').text('用户:' + name + ' | ');
+                        $('.logout').text('注销').on('click', function(){
+                            location.href='/user/logout/';
+                        });
+                        $('.user-id').show();
+                        $('.logout').show();
+                    }else if (data['code']==1050){
+                        $('.user-id').show();
+                    }
+                });
+
+
+            </script>
+
 		<!-- //Dropdown-Menu-JavaScript -->
 		<!-- search-jQuery -->
 				<script src="/static/js/main.js"></script>

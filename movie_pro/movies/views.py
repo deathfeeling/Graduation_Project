@@ -30,14 +30,14 @@ def create_moviedata_to_mysql(request):
     return HttpResponse('Create successful!')
 
 
+def single(request, id):
+    """电影详情"""
+    return render(request, 'single.html')
+
+
 def classification(request):
     """电影分类"""
     return render(request, 'classification.html')
-
-
-def series(request):
-    """电视剧"""
-    return render(request, 'series.html')
 
 
 def news(request):

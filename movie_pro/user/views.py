@@ -2,7 +2,8 @@ import time
 import base64
 from re import fullmatch
 
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from django.contrib.auth.hashers import check_password, make_password
@@ -116,8 +117,20 @@ def click_send_button(request, mobile):
 def logout(request):
     """注销"""
     del request.session['token']
-    return HttpResponse('logout ok')
+    return HttpResponseRedirect(reverse('user:login'))
+
+
+def request_user_info(request):
+    """请求用户登录信息"""
+    user_id = request.session.get('token')
+    if user_id:
+        user = TbUser.objects.get(pk=user_id)
+        name = user.username
+        return JsonResponse({'code':200, 'user':{'id':user_id, 'name':name}})
+    else:
+        return JsonResponse({'code':1050, 'user':{'id':0, 'name':'未登录'}})
 
 
 def index(request):
+    """主页"""
     return render(request, 'index.html')

@@ -160,6 +160,8 @@ ul.nav.navbar-nav.navbar-right {
     letter-spacing: 1px;
 	color:#fff;
 }
+
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,.navbar-default .navbar-nav li a.active {
     color: #fe423f;
 	background:none!important;
