@@ -1,9 +1,9 @@
 import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
-from movies.models import TbMovie
+from movies.models import *
 
 
 def create_moviedata_to_mysql(request):
@@ -25,7 +25,7 @@ def create_moviedata_to_mysql(request):
         download_thunder = item['download_thunder']
         TbMovie.objects.create(title=title, actor=actor, language=language, director=director, release_date=release_date,
                                update_date=update_date, score=score, synopsis=synopsis, download_name=download_name,
-                              download_size=download_size, download_thunder=download_thunder)
+                               download_size=download_size, download_thunder=download_thunder)
 
     return HttpResponse('Create successful!')
 

@@ -1,5 +1,6 @@
 import time
 import base64
+from urllib.parse import quote
 from re import fullmatch
 
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
@@ -9,7 +10,7 @@ from rest_framework.decorators import api_view
 from django.contrib.auth.hashers import check_password, make_password
 from django_redis import get_redis_connection
 
-from movies.models import TbUser, TbLoginIp
+from movies.models import *
 from movie_pro.settings import RE_USER_PASSWORD, RE_USERNAME, RE_PHONE, RE_EMAIL
 from user.tools import gen_mobile_code, send_mobile_code, get_ip_address
 from user.tools import gen_captcha_text
@@ -37,7 +38,8 @@ def login(request):
                 return JsonResponse({'code': 1003, 'msg':'验证码错误'})
             # 记录登录信息
             ip = get_ip_address(request)   # 拿到用户登录ip
-            TbLoginIp.objects.create(ip_addr=ip, login_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), u=user)
+            TbLoginIp.objects.create(ip_addr=ip, login_date=time.strftime("%Y-%m-%d %H:%M:%S", \
+                                                                          time.localtime()), u=user)
             # 保持登录会话
             request.session['token'] = user.u_id
             return JsonResponse({'code':200, 'msg':'ok'})
@@ -96,7 +98,9 @@ def register(request):
         ip_addr = get_ip_address(request)
         password = make_password(password)
         # 注册用户状态默认为1(可用)
-        TbUser.objects.create(username=username, password=password, email=email, phone=phone, register_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), register_ip=ip_addr, u_status=1)
+        TbUser.objects.create(username=username, password=password, email=email,
+                              phone=phone, register_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                              register_ip=ip_addr, u_status=1)
         # 注册成功删除缓存验证码信息
         cli.delete(f'mobile_code:{phone}')
         return JsonResponse({'code':200, 'msg':'ok'})
@@ -133,4 +137,30 @@ def request_user_info(request):
 
 def index(request):
     """主页"""
-    return render(request, 'index.html')
+    latest_movies_data = latest_movies(8)
+    top_movies_data = top_movies(8)
+    return render(request, 'index.html', {'latest_movies': latest_movies_data, 'top_movies': top_movies_data})
+
+
+def latest_movies(filter_number):
+    """最新电影: filter参数指定获取多少条数据,默认全部"""
+    movies = TbMovie.objects.order_by('-release_date').only('m_id', 'title', 'release_date', 'main_pic')
+    movies = movies[:int(filter_number)]
+    result = []
+    for movie in movies:
+        item = {'id': movie.m_id, 'title': movie.title,
+                'release_date': movie.release_date, 'main_pic': movie.main_pic}
+        result.append(item)
+    return result
+
+
+def top_movies(filter_number):
+    """排行榜电影: filter参数指定获取多少条数据,默认全部"""
+    movies = TbMovie.objects.order_by('-score').only('m_id', 'title', 'release_date', 'main_pic')
+    movies = movies[:int(filter_number)]
+    result = []
+    for movie in movies:
+        item = {'id': movie.m_id, 'title': movie.title,
+                'release_date': movie.release_date, 'main_pic': movie.main_pic}
+        result.append(item)
+    return result
