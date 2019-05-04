@@ -31,15 +31,6 @@ def create_moviedata_to_mysql(request):
     return HttpResponse('Create successful!')
 
 
-def single(request, id):
-    """电影详情"""
-    movie = TbMovie.objects.filter(m_id=id).first()
-    if movie:
-        movie_info = movie.__dict__
-        return render(request, 'single.html', movie_info)
-    return HttpResponse('Get some wrong!')
-
-
 def classification(request, classification_id):
     """电影分类 分页传入参数page"""
     page = int(request.GET.get('page', 1))     # 页数
@@ -58,6 +49,18 @@ def classification(request, classification_id):
     return render(request, 'classification.html', {'classification': classification_name, 'movies': result,
                                                    'items': items, 'top_movies': top_movies_data,
                                                    'classification_id': classification_id})
+
+
+def single(request, id):
+    """电影详情"""
+    movie = TbMovie.objects.filter(m_id=id).first()
+    if movie:
+        movie_info = movie.__dict__
+        movie_info['actor'] = '/'.join(eval(movie_info['actor']))
+        movie_info['classifications']= '/'.join([item.classification.upper()
+                                                 for item in movie.classification.all()])
+        return render(request, 'single.html', movie_info)
+    return HttpResponse('Get some wrong!')
 
 
 def news(request):
