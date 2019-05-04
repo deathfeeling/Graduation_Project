@@ -48,33 +48,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li>
 									<div class="col-sm-4">
 										<ul class="multi-column-dropdown">
-											<li><a href="{% url 'movies:classification' %}">动作</a></li>
-											<li><a href="{% url 'movies:classification' %}">爱情</a></li>
-											<li><a href="{% url 'movies:classification' %}">喜剧</a></li>
+											<li><a href="/movies/classification/9/">动作</a></li>
+											<li><a href="/movies/classification/1/">爱情</a></li>
+											<li><a href="/movies/classification/2/">喜剧</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-4">
 										<ul class="multi-column-dropdown">
-											<li><a href="{% url 'movies:classification' %}">战争</a></li>
-											<li><a href="{% url 'movies:classification' %}">历史</a></li>
-											<li><a href="{% url 'movies:classification' %}">剧情</a></li>
+											<li><a href="/movies/classification/3/">战争</a></li>
+											<li><a href="/movies/classification/4/">历史</a></li>
+											<li><a href="/movies/classification/5/">剧情</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-4">
 										<ul class="multi-column-dropdown">
-											<li><a href="{% url 'movies:classification' %}">奇幻</a></li>
-											<li><a href="{% url 'movies:classification' %}">惊悚</a></li>
-											<li><a href="{% url 'movies:classification' %}">动画</a></li>
+											<li><a href="/movies/classification/6/">奇幻</a></li>
+											<li><a href="/movies/classification/7/">惊悚</a></li>
+											<li><a href="/movies/classification/8/">动画</a></li>
 										</ul>
 									</div>
 									<div class="clearfix"></div>
 									</li>
 								</ul>
 							</li>
-							<li><a href="{% url 'movies:series' %}">电视剧</a></li>
 							<li><a href="{% url 'movies:news' %}">资讯</a></li>
 							<li><a href="{% url 'movies:list' %}">A-Z表</a></li>
 							<li><a href="{% url 'movies:contact' %}">联系</a></li>
+                            <!--登录信息-->
+                            <span class="user-id" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;">未登录,请先去<a href="{% url 'user:login' %}">登录</a></span>
+                            <span class="logout" style="font-size: 1.4em;top: 11px; left:50px;position: relative;font-weight: 400;text-transform: uppercase;font-family: 'Lato', sans-serif;letter-spacing: 1px;color:#0fb398;display:none;"></span>
+
 						</ul>
 
 					</div>
@@ -452,6 +455,26 @@ A girl in a small town forms an unlikely....</p>
 					);
 				});
 			</script>
+
+            <script>
+                <!--请求登录用户信息-->
+                $.get('/user/request_user_info/', function(data){
+                    if (data['code']==200){
+                        var name = data['user']['name'];
+                        var id = data['user']['id'];
+                        $('.user-id').text('用户:' + name + ' | ');
+                        $('.logout').text('注销').on('click', function(){
+                            location.href='/user/logout/';
+                        });
+                        $('.user-id').show();
+                        $('.logout').show();
+                    }else if (data['code']==1050){
+                        $('.user-id').show();
+                    }
+                });
+
+
+            </script>
 		<!-- //Dropdown-Menu-JavaScript -->
 		<!-- search-jQuery -->
 				<script src="/static/js/main.js"></script>
