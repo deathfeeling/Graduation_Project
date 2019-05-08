@@ -3,76 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dc17abd4-fb63-4913-8a37-2f7e4579be47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/55.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/66.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/77.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/c9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/g8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/h8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/hr9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/m9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/reply.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/t8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/classification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/classification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/movies/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
+            <state relative-caret-position="781">
               <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -95,44 +26,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/classification.html">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="173">
-              <caret line="275" column="49" selection-start-line="275" selection-start-column="49" selection-end-line="275" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/contact.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="245" column="103" selection-start-line="245" selection-start-column="103" selection-end-line="245" selection-end-column="103" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+              <caret line="436" column="14" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="14" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/news-single.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="128" column="83" lean-forward="true" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="83" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="244" column="51" selection-start-line="244" selection-start-column="51" selection-end-line="244" selection-end-column="51" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="484">
+              <caret line="3264" lean-forward="true" selection-start-line="3264" selection-end-line="3264" />
             </state>
           </provider>
         </entry>
@@ -148,14 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>item</find>
-      <find>2016</find>
-      <find>w3l-movie-gride-agile</find>
-      <find>for</find>
-      <find>tab</find>
-      <find>hori</find>
-      <find>genre</find>
-      <find>single-agile-shar-buttons</find>
       <find>联系电话 180-8039-4810</find>
       <find>注销</find>
       <find>class=&quot;fa fa-phone&quot;</find>
@@ -177,7 +110,15 @@
       <find>22.jgp</find>
       <find>22.j</find>
       <find>top</find>
+      <find>.w3l-movie-gride-agile</find>
+      <find>149</find>
+      <find>owl-item</find>
+      <find>itemWidth</find>
+      <find>index</find>
       <find>movies</find>
+      <find>157</find>
+      <find>197</find>
+      <find>item</find>
     </findStrings>
     <replaceStrings>
       <replace>static/css/</replace>
@@ -212,7 +153,6 @@
         <option value="$PROJECT_DIR$/templates/news.html" />
         <option value="$PROJECT_DIR$/templates/short-codes.html" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/user/views.py" />
         <option value="$PROJECT_DIR$/movies/urls.py" />
         <option value="$PROJECT_DIR$/templates/news-single.html" />
@@ -220,11 +160,13 @@
         <option value="$PROJECT_DIR$/movies/views.py" />
         <option value="$PROJECT_DIR$/templates/classification.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
+    <option name="x" value="1176" />
+    <option name="width" value="264" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -242,6 +184,17 @@
             <path>
               <item name="movie_pro" type="b2602c69:ProjectViewProjectNode" />
               <item name="movie_pro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie_pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie_pro" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movie_pro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie_pro" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="movie_pro" type="b2602c69:ProjectViewProjectNode" />
@@ -355,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556979399370</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="删除多余图片">
+      <created>1557318988621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557318988621</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -371,12 +331,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14376321" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49158248" weight="0.30882353" />
+      <window_info id="Structure" order="1" sideWeight="0.5084175" side_tool="true" weight="0.30882353" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866243" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28433734" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28433734" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34819278" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -417,7 +377,8 @@
     <MESSAGE value="完成主页部分" />
     <MESSAGE value="完成电影分类部分" />
     <MESSAGE value="详情页面完成展示部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="详情页面完成展示部分" />
+    <MESSAGE value="删除多余图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除多余图片" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
@@ -544,20 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-217">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/short-codes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -575,13 +522,6 @@
     <entry file="file://$PROJECT_DIR$/movies/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="2098" selection-start-line="2098" selection-end-line="2098" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -593,13 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="447" selection-start-line="447" selection-end-line="466" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/news-single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="467" column="27" lean-forward="true" selection-start-line="467" selection-start-column="27" selection-end-line="467" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -655,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movies/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -689,14 +612,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/movies/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="60" column="32" lean-forward="true" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/news-single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="128" column="83" lean-forward="true" selection-start-line="128" selection-start-column="83" selection-end-line="128" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#span#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="244" column="51" selection-start-line="244" selection-start-column="51" selection-end-line="244" selection-end-column="51" />
+        <state relative-caret-position="173">
+          <caret line="436" column="14" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#span#0;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#ul#0;n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="3264" lean-forward="true" selection-start-line="3264" selection-end-line="3264" />
         </state>
       </provider>
     </entry>

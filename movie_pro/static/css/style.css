@@ -794,6 +794,8 @@ i.glyphicon.glyphicon-play-circle {
 .mid-1.agileits_w3layouts_mid_1_home {
     padding: 10px 1em;
     background: #ededf1;
+    display:flex;
+    flex-flow:column nowrap;
 	box-shadow: 0px 2px 1px rgba(110, 110, 111, 0.42);
 	-webkit-box-shadow: 0px 2px 1px rgba(110, 110, 111, 0.42);
 	-o-box-shadow: 0px 2px 1px rgba(110, 110, 111, 0.42);
@@ -907,8 +909,9 @@ p.fexi_header_para1 a i {
     float: left;
 }
 .wthree_agile-movies_list {
-    float: right;
-	    padding-right: 0;
+display:flex;
+flex-flow:row wrap;
+
 }
 .video_agile_player {
     padding: 0;
@@ -2371,6 +2374,9 @@ ul.bottom-links-agile li a {
 		padding: 0 1em;
 	}
 	.w3l-movie-gride-agile {
+	display:flex;
+	flex-flow:column nowrap;
+
 		margin-right: 1%;
 		margin-bottom: 1.5%;
 		position: relative;
@@ -3250,3 +3256,9 @@ ul.bottom-links-agile li a {
 	}
 }
 /*-- //responsive --*/
+.mid-2 agile_mid_2_home{
+font-size:80% !important;
+text-align:center;
+
+}
+
