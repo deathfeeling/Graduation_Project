@@ -216,7 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					{% for movie in latest_movies %}
 					<div class="item">
 						<div class="w3l-movie-gride-agile w3l-movie-gride-slider ">
-							<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="{{ movie.main_pic }}" title="{{ movie.title }}" class="img-responsive" alt=" " />
+							<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="/static/images/{{ movie.main_pic }}" title="{{ movie.title }}" class="img-responsive" alt=" " />
 								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 							</a>
 							<div class="mid-1 agileits_w3layouts_mid_1_home">
@@ -242,7 +242,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3_agile_latest_movies">
 				<!--/top-movies-->
-					<h3 class="agile_w3_title">Top<span>Movies</span> </h3>
+					<h3 class="agile_w3_title">Top <span>Movies</span> </h3>
 							<div class="top_movies">
 								<div class="tab_movies_agileinfo">
 										<div class="w3_agile_featured_movies two">
@@ -251,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 												 {% for movie in top_movies %}
 												 <div class="w3l-movie-gride-agile">
-															<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="{{ movie.main_pic }}" title="Movies Pro" class="img-responsive" alt=" ">
+															<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="/static/images/{{ movie.main_pic }}" title="Movies Pro" class="img-responsive" alt=" ">
 															</a>
 																<div class="mid-1 agileits_w3layouts_mid_1_home">
 																	<div class="w3l-movie-text">

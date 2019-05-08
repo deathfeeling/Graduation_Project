@@ -216,7 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!--分类电影-->
 						{% for movie in movies %}
 						<div class="col-md-2 w3l-movie-gride-agile requested-movies">
-							<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="{{ movie.main_pic }}" title="{{ movie.title }}" class="img-responsive" alt=" ">
+							<a href="/movies/single/{{ movie.id }}" class="hvr-sweep-to-bottom"><img src="/static/images/{{ movie.main_pic }}" title="{{ movie.title }}" class="img-responsive" alt=" ">
 								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 							</a>
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
@@ -266,7 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					{% for top_movie in top_movies %}
 					<div class="item">
 						<div class="w3l-movie-gride-agile w3l-movie-gride-slider ">
-							<a href="/movies/single/{{ top_movie.id }}" class="hvr-sweep-to-bottom"><img src="{{ top_movie.main_pic }}" title="{{ top_movies.title }}" class="img-responsive" alt=" " />
+							<a href="/movies/single/{{ top_movie.id }}" class="hvr-sweep-to-bottom"><img src="/static/images/{{ top_movie.main_pic }}" title="{{ top_movies.title }}" class="img-responsive" alt=" " />
 								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 							</a>
 							<div class="mid-1 agileits_w3layouts_mid_1_home">

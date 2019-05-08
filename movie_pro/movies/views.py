@@ -56,11 +56,12 @@ def single(request, id):
     movie = TbMovie.objects.filter(m_id=id).first()
     if movie:
         movie_info = movie.__dict__
-        movie_info['actor'] = '/'.join(eval(movie_info['actor']))
+        movie_info['actor'] = movie_info['actor']
         movie_info['classifications']= '/'.join([item.classification.upper()
                                                  for item in movie.classification.all()])
         return render(request, 'single.html', movie_info)
     return HttpResponse('Get some wrong!')
+# todo：详情页面的评论功能。
 
 
 def news(request):
