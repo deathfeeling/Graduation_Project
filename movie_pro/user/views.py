@@ -148,8 +148,10 @@ def latest_movies(filter_number):
     movies = movies[:int(filter_number)]
     result = []
     for movie in movies:
+        release_date = movie.release_date
+        release_date = f'{release_date.year}年{release_date.month}月{release_date.day}日'
         item = {'id': movie.m_id, 'title': movie.title,
-                'release_date': movie.release_date, 'main_pic': movie.main_pic}
+                'release_date': release_date, 'main_pic': movie.main_pic}
         result.append(item)
     return result
 
@@ -160,7 +162,9 @@ def top_movies(filter_number):
     movies = movies[:int(filter_number)]
     result = []
     for movie in movies:
+        release_date = movie.release_date
+        release_date = f'{release_date.year}年{release_date.month}月{release_date.day}日'
         item = {'id': movie.m_id, 'title': movie.title,
-                'release_date': movie.release_date, 'main_pic': movie.main_pic}
+                'release_date': release_date, 'main_pic': movie.main_pic}
         result.append(item)
     return result

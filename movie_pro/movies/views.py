@@ -41,8 +41,10 @@ def classification(request, classification_id):
     items = paginator.page(page)
     result = []
     for item in items:
+        release_date = item.release_date
+        release_date = f'{release_date.year}年{release_date.month}月{release_date.day}日'
         item = {'id': item.m_id, 'title': item.title,
-                'release_date': item.release_date, 'main_pic': item.main_pic}
+                'release_date': release_date, 'main_pic': item.main_pic}
         result.append(item)
     # 热门数据
     top_movies_data = top_movies(8)
@@ -56,6 +58,7 @@ def single(request, id):
     movie = TbMovie.objects.filter(m_id=id).first()
     if movie:
         movie_info = movie.__dict__
+        movie_info['release_date'] = f'{movie_info["release_date"].year}年{movie_info["release_date"].month}月{movie_info["release_date"].day}日'
         movie_info['actor'] = movie_info['actor']
         movie_info['classifications']= '/'.join([item.classification.upper()
                                                  for item in movie.classification.all()])
