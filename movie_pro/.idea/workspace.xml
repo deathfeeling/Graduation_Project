@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc17abd4-fb63-4913-8a37-2f7e4579be47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="dc17abd4-fb63-4913-8a37-2f7e4579be47" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557327464175</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="调整页面样式">
+      <created>1557360768796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557360768796</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -264,6 +268,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49158248" visible="true" weight="0.10711769" />
       <window_info id="Structure" order="1" sideWeight="0.5084175" side_tool="true" weight="0.30882353" />
@@ -313,7 +318,8 @@
     <MESSAGE value="详情页面完成展示部分" />
     <MESSAGE value="删除多余图片" />
     <MESSAGE value="无话可说" />
-    <option name="LAST_COMMIT_MESSAGE" value="无话可说" />
+    <MESSAGE value="调整页面样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整页面样式" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
