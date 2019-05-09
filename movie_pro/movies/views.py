@@ -1,8 +1,11 @@
 import json
+import datetime
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.urls import reverse
+from rest_framework.decorators import api_view
 
 from movies.models import *
 from user.views import top_movies
@@ -53,17 +56,44 @@ def classification(request, classification_id):
                                                    'classification_id': classification_id})
 
 
+@api_view(['GET', 'POST'])
 def single(request, id):
     """电影详情"""
     movie = TbMovie.objects.filter(m_id=id).first()
-    if movie:
-        movie_info = movie.__dict__
-        movie_info['release_date'] = f'{movie_info["release_date"].year}年{movie_info["release_date"].month}月{movie_info["release_date"].day}日'
-        movie_info['actor'] = movie_info['actor']
-        movie_info['classifications']= '/'.join([item.classification.upper()
-                                                 for item in movie.classification.all()])
-        return render(request, 'single.html', movie_info)
-    return HttpResponse('Get some wrong!')
+    if request.method == 'GET':
+        if movie:
+            movie_info = movie.__dict__
+            movie_info['release_date'] = f'{movie_info["release_date"].year}年{movie_info["release_date"].month}月{movie_info["release_date"].day}日'
+            movie_info['actor'] = movie_info['actor']
+            movie_info['classifications'] = '/'.join([item.classification.upper()
+                                                     for item in movie.classification.all()])
+            # 获取该电影下的评论信息
+            comment_info = []
+            for item in movie.tbcomment_set.all():
+                comment_temp = dict()
+                comment_temp['username'] = item.id_user.username
+                comment_temp['comment'] = item.comment
+                comment_temp['comment_date'] = item.comment_date.strftime('%Y-%m-%d %H:%M:%S')
+                comment_info.append(comment_temp)
+            movie_info['comment_info'] = comment_info
+            return render(request, 'single.html', movie_info)
+        return HttpResponse('Get some wrong!')
+    if request.method == 'POST':
+        # 提交评论
+        data = request.POST.dict()
+        name = data.get('name')
+        phone = data.get('phone')
+        email = data.get('email')
+        message = data.get('message')
+        user = TbUser.objects.filter(username=name, phone=phone, email=email).first()
+        if user:
+            comment = TbComment.objects.create(comment=message, comment_date=datetime.datetime.now())
+            comment.id_user = user
+            comment.m = movie
+            comment.save()
+            return HttpResponseRedirect(f'/movies/single/{id}/')
+        return HttpResponse('用户不存在，不能进行评论！')
+
 # todo：详情页面的评论功能。
 
 

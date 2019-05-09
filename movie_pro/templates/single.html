@@ -215,94 +215,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<p>◎简  介</p>
 													<p>{{ synopsis }}</p>
 													<p>◎磁力链接&nbsp;&nbsp;&nbsp;【{{ download_size }}】&nbsp;<a href="{{ download_thunder }}">【{{ download_name }}】</a></p>
-
-
-
 										    </div>
 
+									   	<!--评论-->
+										{% for comment in comment_info %}
 										<div class="admin-text">
 												<h5>WRITTEN BY ADMIN</h5>
 												<div class="admin-text-left">
-													<a href="#"><img src="/static/images/admin.jpg" alt=""></a>
+													用户 : {{ comment.username }}
 												</div>
 												<div class="admin-text-right">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-													sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													<span>View all posts by :<a href="#"> Admin </a></span>
+													<p>评论 : {{ comment.comment }}</p>
 												</div>
 												<div class="clearfix"> </div>
 										</div>
-										<div class="response">
-							<h4>Responses</h4>
-							<div class="media response-info">
-								<div class="media-left response-text-left">
-									<a href="#">
-										<img class="media-object" src="/static/images/admin.jpg" alt="">
-									</a>
-									<h5><a href="#">Admin</a></h5>
+									    {% endfor %}
+
+
 								</div>
-								<div class="media-body response-text-right">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
-									<ul>
-										<li>October 15, 2016</li>
-										<li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
-									</ul>
-									<div class="media response-info">
-										<div class="media-left response-text-left">
-											<a href="#">
-												<img class="media-object" src="/static/images/admin.jpg" alt="">
-											</a>
-											<h5><a href="#">Admin</a></h5>
-										</div>
-										<div class="media-body response-text-right">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-												sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
-											<ul>
-												<li>November 02, 2016</li>
-												<li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
-											</ul>		
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
 							</div>
-							<div class="media response-info">
-								<div class="media-left response-text-left">
-									<a href="#">
-										<img class="media-object" src="/static/images/admin.jpg" alt="">
-									</a>
-									<h5><a href="#">Admin</a></h5>
-								</div>
-								<div class="media-body response-text-right">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
-									<ul>
-										<li>November 03, 2016</li>
-										<li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
-									</ul>		
-								</div>
-								<div class="clearfix"> </div>
-							</div>
+
 						</div>
+
 											<div class="all-comments-info">
-												 <h5 >LEAVE A COMMENT</h5>
+
 												<div class="agile-info-wthree-box">
-													<form>
+													<form action="" method="post">
 													   <div class="col-md-6 form-info">
-														<input type="text" name="name" placeholder="Your Name" required="">			           					   
-														<input type="email" name="email" placeholder="Your Email" required="">
-														<input type="text" name="phone" placeholder="Your Phone" required="">	
+														<input type="text" name="name" placeholder="Your Name" required="" value="">
+														<input type="email" name="email" placeholder="Your Email" required="" value="">
+														<input type="text" name="phone" placeholder="Your Phone" required="" value="">
 													  </div>
 													   <div class="col-md-6 form-info">
-														
-														<textarea placeholder="Message" required=""></textarea>
-														<input type="submit" value="SEND">
+
+														<textarea placeholder="Message" name="message" required=""></textarea>
+														<input type="submit" value="提交">
 													 </div>
 													 <div class="clearfix"> </div>
-														
-														
+
+
 													</form>
 												</div>
 											</div>

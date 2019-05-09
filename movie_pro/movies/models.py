@@ -20,6 +20,7 @@ class TbClassification(models.Model):
 class TbComment(models.Model):
     c_id = models.AutoField(primary_key=True)
     comment = models.TextField(blank=True, null=True)
+    comment_date = models.DateTimeField(blank=True, null=True)
     id_user = models.ForeignKey('TbUser', models.DO_NOTHING, db_column='id_user', blank=True, null=True)
     m = models.ForeignKey('TbMovie', models.DO_NOTHING, blank=True, null=True)
 
