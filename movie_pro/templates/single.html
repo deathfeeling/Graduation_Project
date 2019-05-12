@@ -220,16 +220,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									   	<!--评论-->
 										{% for comment in comment_info %}
 										<div class="admin-text">
-												<h5>WRITTEN BY ADMIN</h5>
 												<div class="admin-text-left">
-													用户 : {{ comment.username }}
-												</div>
-												<div class="admin-text-right">
-													<p>评论 : {{ comment.comment }}</p>
+													<hr>
+													<strong>{{ comment.username }}&nbsp;&nbsp;{{ comment.comment_date }}</strong>
+													<p></p>
+													<p>{{ comment.comment }}</p>
 												</div>
 												<div class="clearfix"> </div>
 										</div>
 									    {% endfor %}
+									   <hr>
+
 
 
 								</div>
@@ -249,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													   <div class="col-md-6 form-info">
 
 														<textarea placeholder="Message" name="message" required=""></textarea>
-														<input type="submit" value="提交">
+														<input type="submit" value="评论">
 													 </div>
 													 <div class="clearfix"> </div>
 

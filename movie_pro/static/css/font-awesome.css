@@ -370,9 +370,7 @@
 .fa-pencil:before {
   content: "\f040";
 }
-.fa-map-marker:before {
-  content: "\f041";
-}
+
 .fa-adjust:before {
   content: "\f042";
 }
@@ -612,9 +610,6 @@
 .fa-lemon-o:before {
   content: "\f094";
 }
-.fa-phone:before {
-  content: "\f095";
-}
 .fa-square-o:before {
   content: "\f096";
 }
@@ -797,9 +792,6 @@
 .fa-sort-up:before,
 .fa-sort-asc:before {
   content: "\f0de";
-}
-.fa-envelope:before {
-  content: "\f0e0";
 }
 .fa-linkedin:before {
   content: "\f0e1";

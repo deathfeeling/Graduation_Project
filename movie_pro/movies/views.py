@@ -1,10 +1,9 @@
 import json
 import datetime
 
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from django.urls import reverse
 from rest_framework.decorators import api_view
 
 from movies.models import *
@@ -69,7 +68,7 @@ def single(request, id):
                                                      for item in movie.classification.all()])
             # 获取该电影下的评论信息
             comment_info = []
-            for item in movie.tbcomment_set.all():
+            for item in movie.tbcomment_set.order_by('-comment_date').all():
                 comment_temp = dict()
                 comment_temp['username'] = item.id_user.username
                 comment_temp['comment'] = item.comment
@@ -94,11 +93,10 @@ def single(request, id):
             return HttpResponseRedirect(f'/movies/single/{id}/')
         return HttpResponse('用户不存在，不能进行评论！')
 
-# todo：详情页面的评论功能。
-
 
 def news(request):
     """资讯"""
+    # todo: 资讯表
     return render(request, 'news.html')
 
 
@@ -112,9 +110,25 @@ def list(request):
     return render(request, 'list.html')
 
 
+@api_view(['GET', 'POST'])
 def contact(request):
     """联系我"""
-    return render(request, 'contact.html')
+    if request.method == 'GET':
+        return render(request, 'contact.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        user = TbUser.objects.filter(username=username, phone=phone, email=email).first()
+        if user:
+            # todo: 提交意见表
+            # comment = TbComment.objects.create(comment=message, comment_date=datetime.datetime.now())
+            # comment.id_user = user
+            # comment.m = movie
+            # comment.save()
+            return HttpResponse('Send Success')
+        return HttpResponse('用户不存在，不能提交意见！')
 
 
 def search(request):

@@ -1559,9 +1559,6 @@ p.w3ls_head_para {
   margin: 0 1.5%;
 }
 .agileits-get-us ul li i.fa {
-  font-size: 30px;
-  display: block;
-  margin-bottom: 20px;
   color: #fff;
 }
 .agileits-get-us ul li a {
@@ -2186,7 +2183,6 @@ ul.bottom-links-agile li a {
 /*-- single --*/
 .admin-text {
   border: 1px solid #fff;
-  padding: 2em;
   margin-top: 2em;
 }
 .admin-text h5 {
@@ -2203,7 +2199,7 @@ ul.bottom-links-agile li a {
 }
 .admin-text-left {
   float: left;
-  width: 11%;
+  width: 100%;
 }
 .admin-text-right {
   float: right;
