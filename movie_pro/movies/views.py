@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from rest_framework.decorators import api_view
+from pypinyin import pinyin
 
 from movies.models import *
 from user.views import top_movies
@@ -107,7 +108,31 @@ def news_single(request):
 
 def list(request):
     """a-z字母表"""
-    return render(request, 'list.html')
+    query_number = request.GET.get('query_number')
+    movies = TbMovie.objects.order_by('-score').all()
+    if query_number:
+        # 查询首字母
+        movies_info = []   # 符合条件电影
+        counter = 1
+        for movie in movies:
+            if pinyin(movie.title)[0][0][0] == query_number:
+                movie_info = movie.__dict__
+                movie_info['counter'] = counter
+                movie_info['release_date'] = movie_info["release_date"].year
+                movie_info['country'] = movie.id_region.region
+                movie_info['classifications'] = '/'.join([item.classification.upper()
+                                                          for item in movie.classification.all()])
+                movies_info.append(movie_info)
+                counter += 1
+    else:
+        # 所有电影
+        movies_info = [dict(movie.__dict__, **({'counter': counter + 1,
+                                                'release_date': movie.release_date.year,
+                                                'country': movie.id_region.region,
+                                                'classifications': '/'.join([item.classification.upper()
+                                                    for item in movie.classification.all()])}))
+                       for counter, movie in enumerate(movies)]
+    return render(request, 'list.html', locals())
 
 
 @api_view(['GET', 'POST'])
@@ -122,15 +147,26 @@ def contact(request):
         message = request.POST.get('message')
         user = TbUser.objects.filter(username=username, phone=phone, email=email).first()
         if user:
-            # todo: 提交意见表
-            # comment = TbComment.objects.create(comment=message, comment_date=datetime.datetime.now())
-            # comment.id_user = user
-            # comment.m = movie
-            # comment.save()
+            suggestion = TbSuggestion.objects.create(message=message, submit_date=datetime.datetime.now(), u=user)
+            suggestion.save()
             return HttpResponse('Send Success')
         return HttpResponse('用户不存在，不能提交意见！')
 
 
+@api_view(['POST'])
 def search(request):
     """搜索"""
-    return 'ok'
+    search = request.POST.get('search')
+    if not search:
+        return HttpResponse('Please input keywords!')
+    movies = TbMovie.objects.filter(title__contains=search).order_by('-score').all()
+    movies_info = []
+    for counter, movie in enumerate(movies):
+        movie_info = movie.__dict__
+        movie_info['counter'] = counter + 1
+        movie_info['release_date'] = movie_info["release_date"].year
+        movie_info['country'] = movie.id_region.region
+        movie_info['classifications'] = '/'.join([item.classification.upper()
+                                                    for item in movie.classification.all()])
+        movies_info.append(movie_info)
+    return render(request, 'list.html', locals())

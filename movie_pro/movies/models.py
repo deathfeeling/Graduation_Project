@@ -94,3 +94,16 @@ class TbUser(models.Model):
     class Meta:
         managed = False
         db_table = 'tb_user'
+
+
+class TbSuggestion(models.Model):
+    s_id = models.AutoField(primary_key=True)
+    message = models.TextField(blank=True, null=True)
+    submit_date = models.DateTimeField(blank=True, null=True)
+    u = models.ForeignKey('TbUser', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tb_suggestion'
+
+
