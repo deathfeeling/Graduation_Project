@@ -67,7 +67,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="/movies/classification/8/">动画</a></li>
 										</ul>
 									</div>
-									<div class="clearfix"></div>
 									</li>
 								</ul>
 							</li>
@@ -81,7 +80,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 
 					</div>
-					<div class="clearfix"> </div>	
 				</nav>
 					<div class="w3ls_search">
 									<div class="cd-main-header">
@@ -131,69 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<!--//banner-bottom-->
-		     <!-- Modal1 -->
-					<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
 
-							<div class="modal-dialog">
-							<!-- Modal content-->
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4>Login</h4>
-										<div class="login-form">
-											<form action="#" method="post">
-												<input type="email" name="email" placeholder="E-mail" required="">
-												<input type="password" name="password" placeholder="Password" required="">
-												<div class="tp">
-													<input type="submit" value="LOGIN NOW">
-												</div>
-												<div class="forgot-grid">
-												       <div class="log-check">
-														<label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
-														</div>
-														<div class="forgot">
-															<a href="#" data-toggle="modal" data-target="#myModal2">Forgot Password?</a>
-														</div>
-														<div class="clearfix"></div>
-													</div>
-												
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-				<!-- //Modal1 -->
-				  <!-- Modal1 -->
-					<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" >
-
-							<div class="modal-dialog">
-							<!-- Modal content-->
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4>Register</h4>
-										<div class="login-form">
-											<form action="#" method="post">
-											    <input type="text" name="name" placeholder="Name" required="">
-												<input type="email" name="email" placeholder="E-mail" required="">
-												<input type="password" name="password" placeholder="Password" required="">
-												<input type="password" name="conform password" placeholder="Confirm Password" required="">
-												<div class="signin-rit">
-													<span class="agree-checkbox">
-														<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>
-													</span>
-												</div>
-												<div class="tp">
-													<input type="submit" value="REGISTER NOW">
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-				<!-- //Modal1 -->
 						<!-- breadcrumb -->
 	<div class="w3_breadcrumb">
 	<div class="breadcrumb-inner">	
@@ -208,204 +144,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="w3_content_agilleinfo_inner">
 						<div class="agile_featured_movies">
 				            <div class="inner-agile-w3l-part-head">
-					            <h3 class="w3l-inner-h-title">News</h3>
+					            <h3 class="w3l-inner-h-title">资讯</h3>
 								<p class="w3ls_head_para">Add short Description</p>
 							</div>
 							   <div class="latest-news-agile-info">
 								   <div class="col-md-8 latest-news-agile-left-content">
+											<!--资讯-->
+									   		{% for item in data %}
+									   		<hr>
 											<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m1.jpg" alt=""></a>
-												</div>
 												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
+													<h5><a href="/movies/news_single/{{ item.n_id }}">{{ item.title }}&nbsp;&nbsp;--&nbsp;《{{ item.movie_title }}》</a></h5>
 													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">2 comments</a>
+															{{ item.news_date }}
 														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
+														<p>{{ item.less_content }}...</p>
+														<a class="new-more" href="/movies/news_single/{{ item.n_id }}">Read More</a>
 												</div>
 												<div class="clearfix"> </div>
 											</div>
-											<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m2.jpg" alt=""></a>
-												</div>
-												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">4 comments</a>
-														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m3.jpg" alt=""></a>
-												</div>
-												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">6 comments</a>
-														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m4.jpg" alt=""></a>
-												</div>
-												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">4 comments</a>
-														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m5.jpg" alt=""></a>
-												</div>
-												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">5 comments</a>
-														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-												<div class="w3-agileits-news-one">
-												<div class="wthree-news-img">
-													<a href="news-single.html"><img src="/static/images/m6.jpg" alt=""></a>
-												</div>
-												<div class="wthree-news-info">
-													<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-													<div class="agile-post">
-															by <a href="#" title="w3ls" rel="author">Admin</a> on	Oct 30, 2016 with <a href="#">4 comments</a>
-														</div>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
-														<a class="new-more" href="news-single.html">Read More</a>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
+									   		<br>
+									   		{% endfor %}
+									   		<!--资讯-->
+
 								   </div>
-								   <div class="col-md-4 latest-news-agile-right-content">
-								   <h4 class="side-t-w3l-agile">For Latest <span>Movies</span></h4>
-										<div class="side-bar-form">
-										 <form action="#" method="post">
-											<input type="search" name="email" placeholder="Search here...." required="required">
-											<input type="submit" value=" ">
-										 </form>
-									    </div>
-								      <h4 class="side-t-w3l-agile">Hot <span>Topics</span></h3>
-									    <ul class="side-bar-agile">
-										   <li><a href="news-single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
-										   <li><a href="news-single.html">Romantic drama about two people finding out that love</a><p>Feb 3, 2016</p></li>
-										   <li><a href="news-single.html">Storks have moved on from delivering babies to packages ...</a><p>Aug 1, 2016</p></li>
-										   <li><a href="news-single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
-										   <li><a href="news-single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
-										</ul>
-										<h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h3>
-										<div class="video_agile_player sidebar-player">
-										            <div class="video-grid-single-page-agileits">
-														<div data-video="fNKUgX8PhMA" id="video1"> <img src="/static/images/22.jpg" alt="" class="img-responsive"> <div id="play"></div></div>
-													</div>
-
-
-										        <div class="player-text side-bar-info">
-												<p class="fexi_header">Me Before You </p>
-												<p class="fexi_header_para"><span class="conjuring_w3">Story Line<label>:</label></span>Me Before You Official Trailer #2 (2016) - Emilia Clarke, Sam Claflin Movie HD
-
-A girl in a small town forms an unlikely....</p>
-												<p class="fexi_header_para"><span>Release On<label>:</label></span>Feb 3, 2016 </p>
-												<p class="fexi_header_para">
-													<span>Genres<label>:</label> </span>
-													<a href="genre.html">Drama</a> | 
-													<a href="genre.html">Adventure</a> | 
-													<a href="genre.html">Family</a>								
-												</p>
-												<p class="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
-													<a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-													<a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-													<a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
-													<a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-													<a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-												</p>
-											</div>
-
-										    </div>
-											<div class="clearfix"> </div>
-											<div class="agile-info-recent">
-											<h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h4>
-											<div class="w3ls-recent-grids">
-												<div class="w3l-recent-grid">
-													<div class="wom">
-														<a href="news-single.html"><img src="/static/images/m12.jpg" alt=" " class="img-responsive"></a>
-													</div>
-													<div class="wom-right">
-														<h5><a href="news-single.html">Lorem Integer rutrum</a></h5>
-														<p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-															Ut tellus dolor, dapibus eget.</p>
-															<ul class="w3l-sider-list">
-																<li><i class="fa fa-clock-o" aria-hidden="true"></i>On Jan 12, 2016</li>
-																<li><i class="fa fa-eye" aria-hidden="true"></i> 2602</li>
-															</ul>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="w3l-recent-grid">
-													<div class="wom">
-														<a href="news-single.html"><img src="/static/images/m13.jpg" alt=" " class="img-responsive"></a>
-													</div>
-													<div class="wom-right">
-															<h5><a href="news-single.html">Lorem Integer rutrum</a></h5>
-														<p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-															Ut tellus dolor, dapibus eget.</p>
-															<ul class="w3l-sider-list">
-																<li><i class="fa fa-clock-o" aria-hidden="true"></i>On Mar 3, 2016</li>
-																<li><i class="fa fa-eye" aria-hidden="true"></i> 2742</li>
-															</ul>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="w3l-recent-grid">
-													<div class="wom">
-														<a href="news-single.html"><img src="/static/images/m14.jpg" alt=" " class="img-responsive"></a>
-													</div>
-													<div class="wom-right">
-															<h5><a href="news-single.html">Lorem Integer rutrum</a></h5>
-														    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-															Ut tellus dolor, dapibus eget.</p>
-															<ul class="w3l-sider-list">
-																<li><i class="fa fa-clock-o" aria-hidden="true"></i>On Oct 13, 2016</li>
-																<li><i class="fa fa-eye" aria-hidden="true"></i> 2802</li>
-															</ul>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-										</div>
-										
-							       </div>
 								   <div class="clearfix"></div>
 							   </div>
 							   <div class="blog-pagenat-wthree">
+								<!--页码-->
 								<ul>
-									<li><a class="frist" href="#">Prev</a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									
-									<li><a class="last" href="#">Next</a></li>
+									{% if news.has_previous %}
+									<li><a href="#">上一页</a></li>
+									{% endif %}
+									{% for i in news.paginator.page_range %}
+									<li><a href="/movies/news?page={{ i }}">{{ i }}</a></li>
+									{% endfor %}
+									{% if news.has_next %}
+									<li><a href="#">下一页</a></li>
+									{% endif %}
 								</ul>
 							</div>
 						</div>
@@ -469,54 +245,14 @@ A girl in a small town forms an unlikely....</p>
 		<!-- //Dropdown-Menu-JavaScript -->
 		<!-- search-jQuery -->
 				<script src="/static/js/main.js"></script>
-			
-			<script src="/static/js/simplePlayer.js"></script>
-			<script>
-				$("document").ready(function() {
-					$("#video").simplePlayer();
-				});
-			</script>
-			<script>
-				$("document").ready(function() {
-					$("#video1").simplePlayer();
-				});
-			</script>
-			<script>
-				$("document").ready(function() {
-					$("#video2").simplePlayer();
-				});
-			</script>
-				<script>
-				$("document").ready(function() {
-					$("#video3").simplePlayer();
-				});
-			</script>
-			<script>
-				$("document").ready(function() {
-					$("#video4").simplePlayer();
-				});
-			</script>
-			<script>
-				$("document").ready(function() {
-					$("#video5").simplePlayer();
-				});
-			</script>
-			<script>
-				$("document").ready(function() {
-					$("#video6").simplePlayer();
-				});
-			</script>
 
 			<!-- pop-up-box -->  
 		<script src="/static/js/jquery.magnific-popup.js" type="text/javascript"></script>
 	<!--//pop-up-box -->
 
 			<div id="small-dialog1" class="mfp-hide">
-		<iframe src="https://player.vimeo.com/video/165197924?color=ffffff&title=0&byline=0&portrait=0"></iframe>
 	</div>
-	<div id="small-dialog2" class="mfp-hide">
-		<iframe src="https://player.vimeo.com/video/165197924?color=ffffff&title=0&byline=0&portrait=0"></iframe>
-	</div>
+
 	<script>
 		$(document).ready(function() {
 		$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
@@ -534,46 +270,8 @@ A girl in a small town forms an unlikely....</p>
 		});
 	</script>
 <script src="/static/js/easy-responsive-tabs.js"></script>
-<script>
-$(document).ready(function () {
-$('#horizontalTab').easyResponsiveTabs({
-type: 'default', //Types: default, vertical, accordion           
-width: 'auto', //auto or any width like 600px
-fit: true,   // 100% fit in a container
-closed: 'accordion', // Start closed if in accordion view
-activate: function(event) { // Callback function if tab is switched
-var $tab = $(this);
-var $info = $('#tabInfo');
-var $name = $('span', $info);
-$name.text($tab.text());
-$info.show();
-}
-});
-$('#verticalTab').easyResponsiveTabs({
-type: 'vertical',
-width: 'auto',
-fit: true
-});
-});
-</script>
-<link href="/static/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
-<script src="/static/js/owl.carousel.js"></script>
-<script>
-	$(document).ready(function() { 
-		$("#owl-demo").owlCarousel({
-	 
-		 autoPlay: 3000, //Set AutoPlay to 3 seconds
-		  autoPlay : true,
-		   navigation :true,
 
-		  items : 5,
-		  itemsDesktop : [640,4],
-		  itemsDesktopSmall : [414,3]
-	 
-		});
-	 
-	}); 
-</script> 
+<link href="/static/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
 
 <!--/script-->
 <script type="text/javascript" src="/static/js/move-top.js"></script>

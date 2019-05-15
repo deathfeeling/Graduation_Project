@@ -97,13 +97,26 @@ def single(request, id):
 
 def news(request):
     """资讯"""
-    # todo: 资讯表
-    return render(request, 'news.html')
+    page = int(request.GET.get('page', 1))     # 页数
+    props = ('n_id', 'title', 'less_content', 'news_date')
+    news = TbNews.objects.all().only(*props).select_related().order_by('-news_date')
+    paginator = Paginator(news, 4)   # 每页4条数据
+    news = paginator.page(page)
+    data = []
+    for new in news:
+        item = new.__dict__
+        item['news_date'] = item['news_date'].strftime('%Y-%m-%d %H:%M:%S')
+        data.append(dict(item, **{'movie_title': new.m.title}))
+    return render(request, 'news.html', {'data': data, 'news': news})
 
 
-def news_single(request):
+def news_single(request, news_id):
     """资讯详情"""
-    return render(request, 'news-single.html')
+    news = TbNews.objects.filter(n_id=news_id).select_related().first()
+    item = news.__dict__
+    item['news_date'] = item['news_date'].strftime('%Y-%m-%d %H:%M:%S')
+    data = dict(item, **{'movie_pic': news.m.pic, 'movie_title': news.m.title})
+    return render(request, 'news-single.html', {'data': data})
 
 
 def list(request):

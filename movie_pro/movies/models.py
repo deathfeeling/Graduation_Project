@@ -107,3 +107,17 @@ class TbSuggestion(models.Model):
         db_table = 'tb_suggestion'
 
 
+class TbNews(models.Model):
+    n_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=128, blank=True, null=True)
+    less_content = models.CharField(max_length=256, blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    news_date = models.DateTimeField(blank=True, null=True)
+    m = models.ForeignKey('TbMovie', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tb_news'
+
+
+
