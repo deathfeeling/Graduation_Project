@@ -106,7 +106,7 @@ def news(request):
     for new in news:
         item = new.__dict__
         item['news_date'] = item['news_date'].strftime('%Y-%m-%d %H:%M:%S')
-        data.append(dict(item, **{'movie_title': new.m.title}))
+        data.append(dict(item, **{'movie_title': new.m.title, 'movie_id': new.m.m_id}))
     return render(request, 'news.html', {'data': data, 'news': news})
 
 
@@ -115,7 +115,7 @@ def news_single(request, news_id):
     news = TbNews.objects.filter(n_id=news_id).select_related().first()
     item = news.__dict__
     item['news_date'] = item['news_date'].strftime('%Y-%m-%d %H:%M:%S')
-    data = dict(item, **{'movie_pic': news.m.pic, 'movie_title': news.m.title})
+    data = dict(item, **{'movie_pic': news.m.pic, 'movie_title': news.m.title, 'movie_id': news.m.m_id})
     return render(request, 'news-single.html', {'data': data})
 
 
