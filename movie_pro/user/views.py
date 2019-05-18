@@ -106,8 +106,9 @@ def register(request):
         return JsonResponse({'code':200, 'msg':'ok'})
 
 
-def click_send_button(request, mobile):
+def click_send_button(request):
     """发送手机验证码"""
+    mobile = request.GET.get('phone')
     cli = get_redis_connection(alias='default')
     if cli.get(f'mobile_code:{mobile}'):
         return JsonResponse({'code': 20000, 'msg': '请不要在120s内重复发送手机验证码'})

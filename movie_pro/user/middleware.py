@@ -9,7 +9,8 @@ def block_sms_middleware(get_resp):
         # 请求时要做的事情
         path_now = request.path
         unchecked_address = ['/user/login/', '/user/register/', '/user/index/',
-                             '/user/captcha/', '/user/request_user_info/', '/movies/search/']
+                             '/user/captcha/', '/user/request_user_info/', '/movies/search/',
+                             '/user/click_send_button/']
         if path_now not in unchecked_address:
             token = request.session.get('token')
             if not token:

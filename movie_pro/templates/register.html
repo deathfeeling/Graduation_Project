@@ -92,8 +92,8 @@
 	                hidden();
 	                $('.error_tip7').text('请输入正确的手机号码').show();
 	            }else{
-                    $.get('/user/click_send_button/'+phone+'/', function(data){
-                        if (data['code']==20000){
+                    $.get('/user/click_send_button/?phone='+phone, function(data){
+                        if (data['return_code']==20000){
                             hidden();
                             $('.error_tip7').text(data['msg']).show();
                         }else if(data['return_code']==00000){
@@ -101,6 +101,8 @@
                             $('.error_tip7').text('发送成功').show();
                         }else{
                             hidden();
+                            alert(data['return_code']);
+                            alert(data);
                             $('.error_tip7').text('第三方短信服务调用失败').show();
                         }
                     })
